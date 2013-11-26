@@ -1,0 +1,18 @@
+TV
+==
+
+This repo is how we get TV show information.
+
+Visit the following URL:
+http://www.whatsonindia.com/WapsiteDataFetch/FetchWapsiteData.asmx
+
+Go to a particular endpoint, and then copy the required XML. Fill any XML fields
+that you want, and then store it in data.xml
+
+Then run the following command:
+
+curl --silent -q --data @data.xml --header "Content-Type: text/xml; charset=utf-8" http://www.whatsonindia.com/WapsiteDataFetch/FetchWapsiteData.asmx|xmllint --format -
+
+A sample data.xml is provided in trending.xml. Copy it to data.xml and run the above.
+You'd need to install xmllint. If you don't want to, just remove the last pipe
+from the command.
